@@ -1,7 +1,6 @@
 import json
 import requests
 import time
-from operator import itemgetter
 
 # find all official N64 Games on speedrun.com
 all_games = []
