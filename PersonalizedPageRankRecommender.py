@@ -32,7 +32,6 @@ def make_network(data):
                 adj[i][j] += 1
                 adj[j][i] += 1
         # fill row with 1s if there was no overlap
-        print(adj[i])
         if sum(adj[i]) == 0:
             adj[i] = [1 for j in range(len(adj[i]))] 
     return adj
@@ -92,7 +91,6 @@ def get_user_games(user):
 players = find_players(data)
 network = make_network(data)
 all_games = [game["Name"] for game in data]
-print(network)
 # Generate 5 random users to recommend games
 # Format output
 randomlist = [players[i] for i in list(np.random.randint(len(players),size=5))]
@@ -101,7 +99,3 @@ for player in randomlist:
     print("\nGames we think you'll like, "+player+":\n")
     for i in range(len(recommended_games)):
         print(recommended_games[i])
-print("\nGames we think you'll like, ChipGroove: ")
-Chip_games = recommend(get_user_games("ChipGroove"))
-for i in range(len(Chip_games)):
-    print(Chip_games[i])
